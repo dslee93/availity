@@ -17,10 +17,18 @@ lisp.ValidateParentheses();
 //name (ascending).  Lastly, if there are duplicate User Ids for the same Insurance Company, then only the record
 //with the highest version should be included. The following data points are included in the file:
 
+var inputPath = "";
+var outputPath = "";
+//If you have a delimiter that is not "," please add the delimiter and add it to the ExecuteCsv arguments.
+var delimiter = "";
+
+var csvProblem = new CsvProblem();
+
 try
 {
+    csvProblem.ExecuteCsv(inputPath, outputPath);
 
-} catch
+} catch (Exception ex)
 {
-
+    Console.WriteLine("An error occurred: " + ex.Message);
 }
